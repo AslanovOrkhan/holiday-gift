@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./header.css";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
+ 
 import { useAuth } from "../../../Services/Context/AuthContext";
 const ClientHeader = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -21,11 +22,8 @@ const ClientHeader = () => {
             </li>
           </ul>
         </nav>
-        <div
-          className="user-profile"
-          onClick={() => setToggleMenu(!toggleMenu)}
-        >
-          {/* <img src="https://mixmag.com.tr/assets/uploads/images/_columns2/rihanna-june-19-1.jpg" alt="" /> */}
+        <div className="user-profile" onClick={() => setToggleMenu(!toggleMenu)}>
+          { <img src="https://mixmag.com.tr/assets/uploads/images/_columns2/rihanna-june-19-1.jpg" alt="" />}
           <ul className={`user-content ${toggleMenu ? "active" : "inactive"}`}>
             <li>
               <a>login</a>
